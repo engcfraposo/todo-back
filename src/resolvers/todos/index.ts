@@ -1,5 +1,4 @@
 import Todo from "../../models/Todo"
-import mongoose from "mongoose"
 
 export default {
     todo: async (_: any, { id }: {id:string}) => {
