@@ -1,33 +1,24 @@
-import Todo from "../../models/Todo"
+const Todo = [{
+    id:"some-id",
+    title:"some text",
+    isCompleted:false,
+}]
 
 export default {
-    todo: async (_: any, { id }: {id:string}) => {
-        const todo = await Todo.findById(id)
-        return todo
+    todo: (_: any, { id }: {id:string}) => {
+        return Todo[1]
     },
     todos: async () => {
-        const todos = await Todo.find()
-        return todos
+        return Todo
     },
     createTodo: async (_: any, {title}:{title:string}) => {
-        const todo = await Todo.create({
-            title,
-            isComplete: false,
-        })
-        return todo
+        return Todo[0]
     },
     removeTodo: async (_: any, {id}:{id:string}) => {
-        const todo = await Todo.findByIdAndRemove(id)
-        return todo
+        return Todo[0]
     },
 
     setTodoComplete: async (_: any, { id }: {id:string}) => {
-        const oldTodo = await Todo.findById(id)
-        const todo = await Todo.findByIdAndUpdate(
-            id,
-            {isComplete:!oldTodo.isComplete},
-            {new: true}
-        )
-        return todo
+        return Todo[0]
     },
 }
