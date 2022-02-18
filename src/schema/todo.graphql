@@ -1,7 +1,7 @@
 type Todo {
     id: ID!
     title: String!
-    isComplete: Boolean
+    isCompleted: Boolean
 }
 
 type Query {
