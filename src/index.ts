@@ -4,7 +4,7 @@ import resolvers from "./resolvers";
 import cors from "cors";
 import connectCosmoDb from "./database";
 
-require("dotenv").config({path: path.resolve(__dirname, "..",".env")})
+require("dotenv").config({path: path.resolve(__dirname, "..",".env")});
 
 //conect to CosmosDB
 connectCosmoDb();
